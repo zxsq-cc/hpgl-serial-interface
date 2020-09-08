@@ -10,14 +10,15 @@
                 #append to string
                 # +1 to read position
         # return read position
-    
+import time
+
 def fileCheck(checkFile="/Users/user/Desktop/hpglsender/test.txt", position=0):
     
     transport_string = []
     
     def charCheck(checkCharPos):
         CCC = transport_string[checkCharPos-1]
-        if (CCC != "," or CCC != ";"):
+        if (CCC != "," and CCC != ";"):
             print("A"+transport_string[checkCharPos-1])
             return 1
         elif (CCC == "," or CCC == ";"):
@@ -65,36 +66,27 @@ fileCheck()
           
           
 ####Output:
-#Ae
-#cc2
-#Aa
-#cc2
-#Ab
-#cc2
-#Ac
-#cc2
-#Ad
-#cc2
-#Ae
-#cc2
-#Aa
-#cc2
-#Ab
-#cc2
-#Ac
-#cc2
-#Ad
-#cc2
-#Ae
-#cc2
-#A;
-#cc2
-#Traceback (most recent call last):
-#  File "/Users/user/Desktop/test.py", line 62, in <module>
-#    fileCheck()
-#  File "/Users/user/Desktop/test.py", line 46, in fileCheck
-#    CDC = charCheck(distIntoFile)
-#  File "/Users/user/Desktop/test.py", line 19, in charCheck
-#    CCC = transport_string[checkCharPos-1]
-#IndexError: string index out of range
-          
+# Ae
+# cc2
+# Aa
+# cc2
+# Ab
+# cc2
+# Ac
+# cc2
+# Ad
+# cc2
+# Ae
+# cc2
+# Aa
+# cc2
+# Ab
+# cc2
+# Ac
+# cc2
+# Ad
+# cc2
+# Ae
+# cc2
+# B;
+#           
