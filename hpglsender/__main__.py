@@ -2,6 +2,7 @@ from argparse import ArgumentParser
 from serial import Serial
 import time
 import os
+import collections
 
 def show_progress(pos, total, length=100):
     fill = length * pos // total
@@ -64,7 +65,7 @@ def fileCheck(checkFile="/Users/user/Desktop/hpglsender/test.txt", position=0):
             print("dist ", distIntoFile)
     
     checkFile.close()
-    returnDataStruct = namedtuple('returnDataStruct', 'int_Dist, str_Data, bool_Pause')
+    returnDataStruct = collections.namedtuple('returnDataStruct', 'int_Dist, str_Data, bool_Pause')
     returnData = returnDataStruct(distIntoFile, transport_string, pauseBit)
             
     return returnData;
