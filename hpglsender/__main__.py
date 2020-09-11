@@ -1,3 +1,4 @@
+# -*- coding: ascii -*-
 from argparse import ArgumentParser
 from serial import Serial
 import time
