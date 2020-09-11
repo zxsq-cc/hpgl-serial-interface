@@ -36,14 +36,14 @@ def fileCheck(checkFile="/Users/user/Desktop/hpglsender/test.txt", position=0):
        
     def chunkRead(readFile, readPos):
         readFile.seek(readPos)
-        return readFile.read(512)
+        return readFile.read(256)
     
     distIntoFile = position
     checkFile = open(checkFile, "r")
     transport_string = chunkRead(checkFile, distIntoFile)
     print("yo", transport_string)
     #distIntoFile += 1       #idk why but this makes it work
-    distIntoFile += 512
+    distIntoFile += 256
     charOK = 0
     
     while charOK == 0:
