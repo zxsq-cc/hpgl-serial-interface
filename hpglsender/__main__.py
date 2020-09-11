@@ -33,18 +33,22 @@ def fileCheck(checkFile="/Users/user/Desktop/hpglsender/test.txt", position=0):
     def byteRead(readFile, readPos):
         readFile.seek(readPos)
         return readFile.read(1)
-        
+       
+    def chunkRead(readFile, readPos):
+        readFile.seek(readPos)
+        return readFile.read(512)
     
     distIntoFile = position
     checkFile = open(checkFile, "r")
-    transport_string = byteRead(checkFile, distIntoFile)
+    transport_string = chunkRead(checkFile, distIntoFile)
     print("yo", transport_string)
-    distIntoFile += 1       #idk why but this makes it work
+    #distIntoFile += 1       #idk why but this makes it work
+    distIntoFile += 512
     charOK = 0
     
     while charOK == 0:
         CDC = charCheck()
-        print("hecc ", transport_string)
+        #print("hecc ", transport_string)
         if (CDC == 0):
             charOK = 1
             #time.sleep(sleepTime)
