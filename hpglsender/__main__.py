@@ -1,5 +1,5 @@
 from argparse import ArgumentParser
-import serial
+from serial import Serial
 import time
 import os
 
