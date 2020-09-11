@@ -1,4 +1,3 @@
-# -*- coding: ascii -*-
 from argparse import ArgumentParser
 from serial import Serial
 import time
@@ -90,7 +89,7 @@ def main():
     while distanceIntoFile < fileSize:
         dataTuple = fileCheck(args.file, pos)
         distanceIntoFile = dataTuple.int_Dist
-        dataPacket = dataTuple.str_Data
+        dataPacket = dataTuple.str_Data.encode('ascii')
         doPause = dataTuple.bool_Pause
         if doPause == 1:
             #actually send serial line the dataPacket
