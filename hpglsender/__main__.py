@@ -94,5 +94,5 @@ def main():
         if doPause == 1:
             #actually send serial line the dataPacket
             serial.write(dataPacket)
-            time.sleep(args.sleeptime)
+            time.sleep(int(args.sleeptime))
     
