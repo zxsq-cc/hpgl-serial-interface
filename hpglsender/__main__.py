@@ -84,9 +84,9 @@ def main():
     
     fileSize = os.path.getsize(args.file)
     distanceIntoFile = 0
-    
+    pos = 0
     while distanceIntoFile < fileSize:
-        dataTuple = fileCheck(args.file, pos_)
+        dataTuple = fileCheck(args.file, pos)
         distanceIntoFile = dataTuple.int_Dist
         dataPacket = dataTuple.str_Data
         doPause = dataTuple.bool_Pause
@@ -95,6 +95,3 @@ def main():
             serial.write(dataPacket)
             time.sleep(args.sleeptime)
     
-    
-    #hpgl = read_hpgl(args.file)
-    pos = 0
