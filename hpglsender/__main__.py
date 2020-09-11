@@ -1,4 +1,4 @@
-import argparse
+from argparse import ArgumentParser
 import serial
 import time
 import os
